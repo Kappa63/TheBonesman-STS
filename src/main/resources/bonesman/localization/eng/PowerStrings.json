@@ -1,0 +1,44 @@
+{
+  "${modID}:PowerID": {
+    "NAME": "Ultimate Power",
+    "DESCRIPTIONS": [
+      "You are Very Cool and Strong."
+    ]
+  },
+  "${modID}:MatchOnePower": {
+    "NAME": "ONE",
+    "DESCRIPTIONS": [
+      "Double your next 1 domino."
+    ]
+  },
+  "${modID}:MatchTwoPower": {
+    "NAME": "TWO",
+    "DESCRIPTIONS": [
+      "Double your next 2 domino."
+    ]
+  },
+  "${modID}:MatchThreePower": {
+    "NAME": "THREE",
+    "DESCRIPTIONS": [
+      "Double your next 3 domino."
+    ]
+  },
+  "${modID}:MatchFourPower": {
+    "NAME": "FOUR",
+    "DESCRIPTIONS": [
+      "Double your next 4 domino value."
+    ]
+  },
+  "${modID}:MatchFivePower": {
+    "NAME": "FIVE",
+    "DESCRIPTIONS": [
+      "Double your next 5 domino value."
+    ]
+  },
+  "${modID}:MatchSixPower": {
+    "NAME": "SIX",
+    "DESCRIPTIONS": [
+      "Double your next 6 domino value."
+    ]
+  }
+}

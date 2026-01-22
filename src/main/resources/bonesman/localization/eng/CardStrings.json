@@ -1,0 +1,27 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description. NL Second line.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:VierThrow": {
+    "NAME": "Vier Throw",
+    "DESCRIPTION": "${modID}:Domino NL Deal !D! damage. NL Apply 4 0 ${modID}:Match",
+    "UPGRADE_DESCRIPTION": "${modID}:Force NL ${modID}:Domino NL Deal !D! damage. NL Apply 4 0 ${modID}:Match"
+  },
+  "${modID}:FourthWall": {
+    "NAME": "Fourth Wall",
+    "DESCRIPTION": "${modID}:Domino NL Gain !B! Block. NL Apply 4 0 ${modID}:Match",
+    "UPGRADE_DESCRIPTION": "${modID}:Force NL ${modID}:Domino NL Gain !B! Block. NL Apply 4 0 ${modID}:Match"
+  },
+  "${modID}:Swans": {
+    "NAME": "Swans",
+    "DESCRIPTION": "${modID}:Domino NL Gain !B! Block. NL Deal !D! damage. NL Apply 2 2 ${modID}:Match",
+    "UPGRADE_DESCRIPTION": "${modID}:Force NL ${modID}:Domino NL Gain !B! Block. NL Deal !D! damage. NL Apply 2 2 ${modID}:Match"
+  }
+}

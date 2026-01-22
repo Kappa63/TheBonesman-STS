@@ -1,0 +1,11 @@
+{
+  "${modID}:Bonesman": {
+    "NAMES": [
+      "The Bonesman",
+      "the Bonesman"
+    ],
+    "TEXT": [
+      "A domino player with a knack for making things worse. NL He carves dominoes out of his enemies' bones."
+    ]
+  }
+}
