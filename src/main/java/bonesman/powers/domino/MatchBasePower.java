@@ -7,12 +7,15 @@ import bonesman.util.DominoUtils;
 
 import static bonesman.BonesmanMod.makeID;
 
-public abstract class MatchBasePower extends BasePower {
+public class MatchBasePower extends BasePower {
     private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
 
-    public MatchBasePower(String powerId, AbstractCreature owner) {
-        super(powerId, TYPE, TURN_BASED, owner, 0);
+    public MatchBasePower(int value, AbstractCreature owner) {
+        super(DominoUtils.getMatchPowerName(value), TYPE, TURN_BASED, owner, 0);
+    }
+    public MatchBasePower(String powerID, AbstractCreature owner) {
+        super(powerID, TYPE, TURN_BASED, owner, 0);
     }
 
     @Override

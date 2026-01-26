@@ -9,7 +9,7 @@ public final class DominoUtils {
             case 4: return "MatchFourPower";
             case 5: return "MatchFivePower";
             case 6: return "MatchSixPower";
-            default: return "";
+            default: return "NULL";
         }
     }
 }

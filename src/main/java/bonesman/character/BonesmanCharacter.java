@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import bonesman.cards.common.Zweip;
 import bonesman.cards.starting.FourthWall;
 import bonesman.cards.starting.Swans;
 import bonesman.cards.starting.VierThrow;
@@ -153,6 +154,8 @@ public class BonesmanCharacter extends CustomPlayer {
         retVal.add(FourthWall.ID);
 
         retVal.add(Swans.ID);
+
+        retVal.add(Zweip.ID);
 
         return retVal;
     }

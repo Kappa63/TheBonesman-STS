@@ -1,22 +1,15 @@
 package bonesman.cards.starting;
 
-import bonesman.cards.BaseCard;
+import bonesman.cards.BaseDomino;
 import bonesman.character.BonesmanCharacter;
-import bonesman.powers.domino.MatchBasePower;
-import bonesman.powers.domino.MatchFourPower;
 import bonesman.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class FourthWall extends BaseCard {
+public class FourthWall extends BaseDomino {
     public static final String ID = makeID(FourthWall.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
@@ -34,7 +27,7 @@ public class FourthWall extends BaseCard {
     private static final int UPG_FORCE_MATCH = 1;
 
     public FourthWall() {
-        super(ID, info);
+        super(ID, info, BLOCK, 0, 2.0f);
         setBlock(BLOCK, UPG_BLOCK);
         setCustomVar("ForceMatch", FORCE_MATCH, UPG_FORCE_MATCH);
 
@@ -42,27 +35,10 @@ public class FourthWall extends BaseCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(MatchFourPower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(p, p, MatchFourPower.POWER_ID));
-            addToBot(new GainBlockAction(p, p, BLOCK*2));
-            addToBot(new DamageAction(m, new DamageInfo(p, damage*2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        } else {
-            if (customVar("ForceMatch") == 1){
-                addToBot(new GainBlockAction(p, p, BLOCK*2));
-                for (AbstractPower ap : p.powers)
-                    if (ap instanceof MatchBasePower)
-                        addToBot(new RemoveSpecificPowerAction(p, p, ap));
-            } else {
-                addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-                addToBot(new GainBlockAction(p, p, BLOCK));
-            }
-            addToBot(new ApplyPowerAction(p, p, new MatchFourPower(p)));
-        }
+    protected void leftDominoAction(AbstractPlayer p, AbstractMonster m, float mult) {
+        addToBot(new GainBlockAction(p, p, MathUtils.floor(block*mult)));
     }
 
     @Override
-    public AbstractCard makeCopy() {
-        return new FourthWall();
-    }
+    protected void rightDominoAction(AbstractPlayer p, AbstractMonster m, float mult) {}
 }

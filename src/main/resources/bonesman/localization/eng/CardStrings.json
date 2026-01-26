@@ -23,5 +23,9 @@
     "NAME": "Swans",
     "DESCRIPTION": "${modID}:Domino NL Gain !B! Block. NL Deal !D! damage. NL Apply 2 2 ${modID}:Match",
     "UPGRADE_DESCRIPTION": "${modID}:Force NL ${modID}:Domino NL Gain !B! Block. NL Deal !D! damage. NL Apply 2 2 ${modID}:Match"
+  },
+  "${modID}:Zweip": {
+    "NAME": "Zwei-p",
+    "DESCRIPTION": "${modID}:Domino NL Deal !D! damage. NL Draw !M! cards. NL Apply 0 2 ${modID}:Match Exhaust"
   }
 }
